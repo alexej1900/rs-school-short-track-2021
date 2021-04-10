@@ -12,7 +12,11 @@
 function deleteDigit(n) {
   let res = String(n);
   const min = res.split('').sort();
-  res = +(res.slice(0, res.indexOf(min[0]) + res.slice(res.indexOf(min[0] + 1))));
+  const a1 = res.slice(0, res.indexOf(min[0]));
+  const a2 = res.slice((res.indexOf(min[0]) + 1), res.length);
+  if (res.indexOf(min[0]) !== res.length - 1) {
+    res = +`${a1}${a2}`;
+  } else res = +a1;
   return res;
 }
 

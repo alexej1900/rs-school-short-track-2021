@@ -19,7 +19,7 @@ function sortByHeight(arr) {
     return set;
   });
   set.sort((a, b) => a - b);
-  for (let a = 0; a < arr.length; a + 1) {
+  for (let a = 0; a < arr.length; a += 1) {
     result.push((arr[a] === -1) ? -1 : set.shift());
   }
   return result;

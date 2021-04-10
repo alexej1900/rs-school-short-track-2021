@@ -16,8 +16,8 @@
  */
 function getMatrixElementsSum(matrix) {
   let count = 0;
-  for (let i = 0; i < matrix.length; i + 1) {
-    for (let j = 0; j < matrix[i].length; j + 1) {
+  for (let i = 0; i < matrix.length; i += 1) {
+    for (let j = 0; j < matrix[i].length; j += 1) {
       if (i === 0) {
         count += matrix[i][j];
       } else if (matrix[i - 1][j] !== 0) {

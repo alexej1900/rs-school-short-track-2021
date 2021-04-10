@@ -23,9 +23,9 @@
  */
 function minesweeper(matrix) {
   const res = [];
-  for (let i = 0; i < matrix.length; i + 1) {
+  for (let i = 0; i < matrix.length; i += 1) {
     res[i] = [];
-    for (let j = 0; j < matrix[i].length; j + 1) {
+    for (let j = 0; j < matrix[i].length; j += 1) {
       let count = 0;
       if (i > 0 && j > 0 && matrix[i - 1][j - 1] === true) {
         count += 1;

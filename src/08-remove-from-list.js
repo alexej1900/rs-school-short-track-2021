@@ -18,43 +18,23 @@
 // }
 
 function removeKFromList(l, k) {
-  let list = l;
-  let res = l;
-  while (res) {
-    if (list.value !== k) {
-      res.value = list.value;
-      res = res.next;
-      list = list.next;
-    } else if (list.value === k) {
-      list = list.next;
-      res.value = list.next.value;
-    } else {
-      res.next = null;
-    }
+  const head = l;
+  while (head.value === k) {
+    head = head.next;
   }
+  let currNode = head;
+  let nextNode = currNode.next;
+  while (nextNode !== null) {
+    if (nextNode.value === k) {
+      currNode.next = nextNode.next;
+      if (currNode.next == null) {
+        break;
+      }
+    }
+    currNode = currNode.next;
+    nextNode = currNode.next;
+  }
+  return head;
 }
-//   const head = l;
-//   // let prev = null;
-//   const list = l;
-//   // console.log('head', head.next);
-//   // console.log('list', list);
-//   while (list) {
-//     if (list.value === k) {
-//       head.value = list.next.value;
-//       list.value = list.next.value;
-//     } else if (list.value !== k) {
-//       head.value = list.value;
-//       list.value = list.next.value;
-//       // list = list.next;
-//       // console.log('list', list);
-//     }
-//     // else {
-//     //   head.next = list.next;
-//     //   list.value = list.next.next;
-//     // }
-//   }
-//   // return list;
-// }
 
-// console.log(removeKFromList([3, 1, 2, 3, 4, 5], 3));
 module.exports = removeKFromList;

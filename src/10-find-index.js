@@ -12,13 +12,21 @@
  *
  */
 function findIndex(array, value) {
-  let res = 0;
-  for (let i = 0; i < array.length; i += 1) {
-    if (array[i] === value) {
-      res = i;
+  let low = 0;
+  let high = array.length - 1;
+  while (low <= high) {
+    const middle = parseInt(((high + low) / 2), 10);
+    const res = array[middle];
+    if (res === value) {
+      return middle;
+    }
+    if (res > value) {
+      high = middle - 1;
+    } else {
+      low = middle + 1;
     }
   }
-  return res;
+  return null;
 }
 
 module.exports = findIndex;

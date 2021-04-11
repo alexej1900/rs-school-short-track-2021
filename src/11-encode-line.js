@@ -15,11 +15,11 @@ function encodeLine(str) {
     if (str[i] !== str[i + 1]) {
       if (count === 1) {
         res = `${res}${str[i]}`;
+      } else {
+        res = `${res}${count}${str[i]}`;
       }
-      res = `${res}${count}${str[i]}`;
       count = 1;
-    }
-    count += 1;
+    } else count += 1;
   }
   return res;
 }

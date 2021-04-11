@@ -18,7 +18,7 @@
 // }
 
 function removeKFromList(l, k) {
-  const head = l;
+  let head = l;
   while (head.value === k) {
     head = head.next;
   }
